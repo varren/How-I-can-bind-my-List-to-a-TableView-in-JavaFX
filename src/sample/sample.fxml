@@ -1,0 +1,20 @@
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<GridPane alignment="CENTER" hgap="10.0" vgap="10.0"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="sample.Controller">
+
+    <TableView fx:id="tblTicket" GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <columns>
+            <TableColumn fx:id="clmID" text="clmID"></TableColumn>
+            <TableColumn fx:id="clmTicketName" text="clmTicketName"></TableColumn>
+            <TableColumn fx:id="clmLastName" text="clmLastName"></TableColumn>
+            <TableColumn fx:id="clmCategory" text="clmCategory"></TableColumn>
+            <TableColumn fx:id="clmFirstName" text="clmFirstName"></TableColumn>
+        </columns>
+
+    </TableView>
+    <Button text="Add" onAction="#btnCreateTicket_Click"></Button>
+</GridPane>
