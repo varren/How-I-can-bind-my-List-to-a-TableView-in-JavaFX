@@ -23,20 +23,19 @@ public class Controller {
     private TableColumn<Ticket, String> clmCategory;
     @FXML
     private TableColumn<Ticket, String> clmFirstName;
-    boolean initialised = false;
+
     private int ticketcounter = 0;
+
+    public void initialize(){
+        clmID.setCellValueFactory(new PropertyValueFactory<Ticket, String>("ticketId"));
+        clmTicketName.setCellValueFactory(new PropertyValueFactory<Ticket, String>("ticketName"));
+        clmLastName.setCellValueFactory(new PropertyValueFactory<Ticket, String>("ticketLastName"));
+        clmCategory.setCellValueFactory(new PropertyValueFactory<Ticket, String>("ticketCategory"));
+        clmFirstName.setCellValueFactory(new PropertyValueFactory<Ticket, String>("ticketFirstName"));
+    }
 
     //TableView wird generiert
     private void TableViewLoad(ObservableList<Ticket> ticketData) {
-
-        if (!initialised) {
-            initialised = true;
-            clmID.setCellValueFactory(new PropertyValueFactory<Ticket, String>("ticketId"));
-            clmTicketName.setCellValueFactory(new PropertyValueFactory<Ticket, String>("ticketName"));
-            clmLastName.setCellValueFactory(new PropertyValueFactory<Ticket, String>("ticketLastName"));
-            clmCategory.setCellValueFactory(new PropertyValueFactory<Ticket, String>("ticketCategory"));
-            clmFirstName.setCellValueFactory(new PropertyValueFactory<Ticket, String>("ticketFirstName"));
-        }
 
         tblTicket.setItems(getTicketData());
 
